@@ -57,5 +57,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include_once '../vistas/registro.html.php';
+include __DIR__ . '/Vistas/registro.html.php';
 ?>
