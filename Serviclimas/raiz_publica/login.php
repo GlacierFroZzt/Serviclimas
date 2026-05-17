@@ -43,5 +43,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include dirname(__DIR__) . '/vistas/login.html.php';
+include __DIR__ . '/vistas/login.html.php';
 ?>
