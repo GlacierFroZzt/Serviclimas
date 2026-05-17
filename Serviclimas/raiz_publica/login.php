@@ -43,6 +43,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Jalar el cascarón visual
-include __DIR__ . '../vistas/login.html.php';
+include dirname(__DIR__) . '/vistas/login.html.php';
 ?>
