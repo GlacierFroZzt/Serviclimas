@@ -7,7 +7,7 @@ RUN a2enmod rewrite
 COPY . /var/www/html/
 
 # Decirle a Apache que la raíz pública del sitio es su carpeta "raiz_publica"
-ENV APACHE_DOCUMENT_ROOT /var/www/html/raiz_publica
+ENV APACHE_DOCUMENT_ROOT /var/www/html
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 
