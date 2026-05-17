@@ -1,15 +1,18 @@
 FROM php:8.2-apache
 
-# 1. Habilitar el módulo de reescritura de Apache por si acaso
+# Habilitar el módulo de reescritura de Apache
 RUN a2enmod rewrite
 
-# 2. Copiar todo el proyecto a la ruta por defecto
+# Copiar todo el proyecto al servidor
 COPY . /var/www/html/
 
-# 3. ¡La clave, viejón! Le cambiamos las variables internas a Apache directo
-ENV APACHE_DOCUMENT_ROOT=/var/www/html/raiz_publica
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
+# ¡ESTA LÍNEA ES PARA VER QUÉ ESTÁ PASANDO, VIEJÓN!
+# Nos va a decir en los logs qué carpetas existen de verdad en la raíz
+RUN ls -la /var/www/html/
 
-# 4. Exponer el puerto estándar web
+# Configurar el DocumentRoot a mano limpiecita sin variables fallas
+RUN sed -ri -e 's!/var/www/html!/var/www/html/raiz_publica!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/html!/var/www/html/raiz_publica!g' /etc/apache2/apache2.conf
+
+# Exponer el puerto estándar web
 EXPOSE 80
