@@ -1,17 +1,17 @@
 FROM php:8.2-apache
 
-# Instalar las extensiones de PDO y MySQL
+# 1. Instalar las extensiones de PDO y MySQL de una vez
 RUN docker-php-ext-install pdo pdo_mysql
 
-# Habilitar el módulo de reescritura de Apache
+# 2. Habilitar el módulo de reescritura de Apache
 RUN a2enmod rewrite
 
-# Copiar todo el proyecto al servidor
+# 3. Copiar todo el proyecto al contenedor
 COPY . /var/www/html/
 
-# Ponemos la ruta fija en el sed para que no haya fallas de variables
-RUN sed -ri -e 's!/var/www/html!/var/www/html/raiz_publica!g' /etc/apache2/sites-available/*.conf
-RUN sed -ri -e 's!/var/www/html!/var/www/html/raiz_publica!g' /etc/apache2/apache2.conf
+# 4. Cambiar las rutas del Apache usando comillas dobles y texto directo
+RUN sed -ri -e "s!/var/www/html!/var/www/html/raiz_publica!g" /etc/apache2/sites-available/*.conf
+RUN sed -ri -e "s!/var/www/html!/var/www/html/raiz_publica!g" /etc/apache2/apache2.conf
 
 # Exponer el puerto estándar web
 EXPOSE 80
