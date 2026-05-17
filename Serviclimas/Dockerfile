@@ -1,17 +1,15 @@
 FROM php:8.2-apache
 
-# Habilitar el módulo de reescritura de Apache por si acaso
+# 1. Habilitar el módulo de reescritura de Apache por si acaso
 RUN a2enmod rewrite
 
-# Copiar todo el proyecto al servidor
+# 2. Copiar todo el proyecto a la ruta por defecto
 COPY . /var/www/html/
 
-# Definimos la variable de entorno
-ENV APACHE_DOCUMENT_ROOT /var/www/html/raiz_publica
+# 3. ¡La clave, viejón! Le cambiamos las variables internas a Apache directo
+ENV APACHE_DOCUMENT_ROOT=/var/www/html/raiz_publica
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 
-# ¡Con comillas dobles para que jale la variable bien machín!
-RUN sed -ri -e 's!/var/www/html!/var/www/html/raiz_publica!g' /etc/apache2/sites-available/*.conf
-RUN sed -ri -e 's!/var/www/html!/var/www/html/raiz_publica!g' /etc/apache2/apache2.conf
-
-# Exponer el puerto estándar web
+# 4. Exponer el puerto estándar web
 EXPOSE 80
