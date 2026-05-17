@@ -1,0 +1,1 @@
+<?php header("Location: raiz_publica/index.php"); ?>
