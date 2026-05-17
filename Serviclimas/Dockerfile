@@ -1,5 +1,8 @@
 FROM php:8.2-apache
 
+# 1. Instalar las extensiones de PDO y MySQL que ocupa PHP para hablar con la base de datos
+RUN docker-php-ext-install pdo pdo_mysql
+
 # Habilitar el módulo de reescritura de Apache por si acaso
 RUN a2enmod rewrite
 
