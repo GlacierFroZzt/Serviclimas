@@ -10,8 +10,8 @@ COPY . /var/www/html/
 ENV APACHE_DOCUMENT_ROOT /var/www/html/raiz_publica
 
 # ¡Con comillas dobles para que jale la variable bien machín!
-RUN sed -ri -e "s!/var/www/html!${APACHE_DOCUMENT_ROOT}!g" /etc/apache2/sites-available/*.conf
-RUN sed -ri -e "s!/var/www/html!${APACHE_DOCUMENT_ROOT}!g" /etc/apache2/apache2.conf
+RUN sed -ri -e 's!/var/www/html!/var/www/html/raiz_publica!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/html!/var/www/html/raiz_publica!g' /etc/apache2/apache2.conf
 
 # Exponer el puerto estándar web
 EXPOSE 80
