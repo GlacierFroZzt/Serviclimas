@@ -9,11 +9,9 @@ RUN a2enmod rewrite
 # 3. Copiar todo el proyecto al contenedor
 COPY . /var/www/html/
 
-# !!! LÍNEA DE PRUEBA: Nos va a mostrar en el log qué carpetas existen de veras !!!
-RUN ls -la /var/www/html
+# 4. Cambiar las rutas apuntando directo a la carpeta del proyecto
+RUN sed -ri -e "s!/var/www/html!/var/www/html/Serviclimas/raiz_publica!g" /etc/apache2/sites-available/*.conf
+RUN sed -ri -e "s!/var/www/html!/var/www/html/Serviclimas/raiz_publica!g" /etc/apache2/apache2.conf
 
-# 4. Cambiar las rutas del Apache
-RUN sed -ri -e "s!/var/www/html!/var/www/html/raiz_publica!g" /etc/apache2/sites-available/*.conf
-RUN sed -ri -e "s!/var/www/html!/var/www/html/raiz_publica!g" /etc/apache2/apache2.conf
-
+# Exponer el puerto estándar web
 EXPOSE 80
