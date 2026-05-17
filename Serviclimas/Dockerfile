@@ -6,12 +6,12 @@ RUN a2enmod rewrite
 # Copiar todo el proyecto al servidor
 COPY . /var/www/html/
 
-# ¡Aquí está el cambio perrón, viejón! Apunte directo a raiz_publica
+# Definimos la variable de entorno
 ENV APACHE_DOCUMENT_ROOT /var/www/html/raiz_publica
 
-# Reemplazamos la ruta en la configurashión de Apache
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
+# ¡Con comillas dobles para que jale la variable bien machín!
+RUN sed -ri -e "s!/var/www/html!${APACHE_DOCUMENT_ROOT}!g" /etc/apache2/sites-available/*.conf
+RUN sed -ri -e "s!/var/www/html!${APACHE_DOCUMENT_ROOT}!g" /etc/apache2/apache2.conf
 
 # Exponer el puerto estándar web
 EXPOSE 80
