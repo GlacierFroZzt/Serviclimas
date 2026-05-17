@@ -185,8 +185,8 @@
                 <?php if (isset($_SESSION['cliente_id'])): ?>
                     <a href="perfil.php" class="bg-[#27272a] hover:bg-zinc-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-md">Mi Perfil</a>
                 <?php else: ?>
-                    <a href="login.php" class="text-zinc-300 hover:text-white text-xs font-semibold transition-colors duration-200">Entrar</a>
-                    <a href="registro.php" class="bg-[#dc2626] hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg shadow-red-900/20">Registrarme</a>
+                    <a href="raiz_publica/login.php" class="text-zinc-300 hover:text-white text-xs font-semibold transition-colors duration-200">Entrar</a>
+                    <a href="raiz_publica/registro.php" class="bg-[#dc2626] hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg shadow-red-900/20">Registrarme</a>
                 <?php endif; ?>
             </div>
         </div>
