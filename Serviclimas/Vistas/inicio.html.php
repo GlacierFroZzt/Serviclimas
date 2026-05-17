@@ -221,7 +221,7 @@
             <div id="card-mirage" onclick="seleccionarTarjetaDirecta(1)" class="tarjeta-3d siguiente bg-[#16161a] border border-[#27272a] rounded-2xl overflow-hidden shadow-2xl cursor-pointer group">
                 <div class="contenedor-foto-clima">
                     <span class="absolute top-3 left-3 bg-[#dc2626] text-white text-[9px] font-black uppercase px-2 py-0.5 rounded tracking-wider shadow-md z-10">¡Oferta!</span>
-                    <img src="../img/mirage-xlife-1ton.png" alt="Mirage Xlife" class="foto-clima-3d group-hover:opacity-100">
+                    <img src="img/mirage-xlife-1ton.png" alt="Mirage Xlife" class="foto-clima-3d group-hover:opacity-100">
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
                     <div>
@@ -243,7 +243,7 @@
             <div id="card-magnum" onclick="seleccionarTarjetaDirecta(2)" class="tarjeta-3d oculta bg-[#16161a] border border-[#27272a] rounded-2xl overflow-hidden shadow-2xl cursor-pointer group">
                 <div class="contenedor-foto-clima">
                     <span class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-black uppercase px-2 py-0.5 rounded tracking-wider shadow-md z-10">Ahorrador</span>
-                    <img src="../img/magnum-inverter-1.5ton.jpg" alt="Magnum Inverter" class="foto-clima-3d group-hover:opacity-100">
+                    <img src="img/magnum-inverter-1.5ton.jpg" alt="Magnum Inverter" class="foto-clima-3d group-hover:opacity-100">
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
                     <div>
@@ -265,7 +265,7 @@
             <div id="card-carrier" onclick="seleccionarTarjetaDirecta(3)" class="tarjeta-3d oculta bg-[#16161a] border border-[#27272a] rounded-2xl overflow-hidden shadow-2xl cursor-pointer group">
                 <div class="contenedor-foto-clima">
                     <span class="absolute top-3 left-3 bg-zinc-800 border border-zinc-700 text-zinc-300 text-[9px] font-bold uppercase px-2 py-0.5 rounded tracking-wider shadow-md z-10">Uso Rudo</span>
-                    <img src="../img/carrier-2ton.jpg" alt="Carrier 2 Ton" class="foto-clima-3d group-hover:opacity-100">
+                    <img src="img/carrier-2ton.jpg" alt="Carrier 2 Ton" class="foto-clima-3d group-hover:opacity-100">
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
                     <div>
@@ -287,7 +287,7 @@
             <div id="card-trane" onclick="seleccionarTarjetaDirecta(4)" class="tarjeta-3d anterior bg-[#16161a] border border-[#27272a] rounded-2xl overflow-hidden shadow-2xl cursor-pointer group">
                 <div class="contenedor-foto-clima">
                     <span class="absolute top-3 left-3 bg-red-950/60 border border-red-900 text-red-400 text-[9px] font-bold uppercase px-2 py-0.5 rounded tracking-wider shadow-md z-10">Premium</span>
-                    <img src="../img/trane-inverter.jpg" alt="Trane Inverter" class="foto-clima-3d group-hover:opacity-100">
+                    <img src="img/trane-inverter.jpg" alt="Trane Inverter" class="foto-clima-3d group-hover:opacity-100">
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
                     <div>
