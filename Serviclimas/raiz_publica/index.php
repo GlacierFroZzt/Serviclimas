@@ -67,5 +67,5 @@ $mensaje_reseña = isset($mensaje_reseña) ? $mensaje_reseña : "";
 $reseñas_aprobadas = isset($reseñas_aprobadas) ? $reseñas_aprobadas : []; 
 
 // Ya que están declaradas, ahora sí jalamos la vista
-include '../Vistas/inicio.html.php';
+include '/Vistas/inicio.html.php';
 ?>
